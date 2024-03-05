@@ -56,7 +56,7 @@
                 </p>
             </div>
             <div class="mt-[30px] flex justify-center">
-                <button id="order"
+                <button data-area="order"
                     class="border-[#000080] rounded-[5px] border-[2px] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">এখানে
                     অর্ডার করুন
                 </button>
@@ -342,7 +342,7 @@
                     বাটনে ক্লিক করুন ।আপনার অর্ডারটি সঠিকভাবে সম্পন্ন হবে।
                 </p>
             </div>
-            <div class="">
+            <div id="order">
                 <h2 class="sm-1 text-[30px] text-[#ff4500]">CHOOSE PRODUCT CATEGORY</h2>
                 <div class="mt-[20px] pl-[40px] max-sm:pl-[0px]">
                     <div class="flex gap-2">
@@ -375,21 +375,21 @@
                             আপনার নাম লিখুন
                         </label><br />
                         <input type="text"
-                            class="my-[10px] w-full rounded-[5px] border-[1px] border-[black] py-[10px]" />
+                            class="my-[10px] w-full rounded-[5px] border-[1px] border-[black] pl-[10px] py-[10px]" />
                     </div>
                     <div>
                         <label class="sm mt-[-8px] text-[20px] font-[700]">
                             আপনার ঠিকানা লিখুন
                         </label><br />
                         <input type="text"
-                            class="my-[10px] w-full rounded-[5px] border-[1px] border-[black] py-[10px]" />
+                            class="my-[10px] w-full rounded-[5px] border-[1px] border-[black] pl-[10px] py-[10px]" />
                     </div>
                     <div>
                         <label class="sm-1 mt-[-8px] text-[20px] font-[700]">
                             মোবাইল নাম্বার
                         </label><br />
                         <input type="text"
-                            class="my-[10px] w-full rounded-[5px] border-[1px] border-[black] py-[10px]" />
+                            class="my-[10px] w-full rounded-[5px] border-[1px] border-[black] pl-[10px] py-[10px]" />
                     </div>
                 </div>
 
