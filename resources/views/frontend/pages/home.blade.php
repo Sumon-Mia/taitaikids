@@ -1,22 +1,45 @@
 @extends('frontend.layout.app')
 
 @push('custom_css')
+
 @endpush
 
 @push('custom_js')
 @endpush
 
 @section('content')
-    <div class="mt-[20px] px-[100px]">
+    <div class="mt-[100px] max-sm:mt-[50px] px-[100px] max-lg:px-[60px] max-md:px-[40px] max-sm:px-[20px]">
+        <style>
+            @media (max-width:1150px) {
+                .product {
+                    height: 100%;
+                }
+            }
+
+            @media (max-width:400px) {
+                .sm-1 {
+                    font-size: 18px;
+                }
+                .sm-2{
+                    font-size: 12px;
+                }
+                .sm-3{
+                    font-size: 16px;
+                }
+            }
+            
+          
+           
+        </style>
         {{-- ------header-section----- --}}
         <section class="">
             <div>
-                <h1 class="text-center text-[18px] font-[600] text-[#1e90ff]">
+                <h1 class="sm-1 text-center text-[30px] font-[600] text-[#1e90ff]">
                     নবজাতককে দিন মোস্ট ওয়ান্টেড গিফট <br /> নিউবর্ন কেয়ার বান্ডেল (১৫ ইন ১)
                 </h1>
             </div>
             <div class="mt-[20px]">
-                <p class="text-center text-[18px] font-[600] text-[black]">
+                <p class="sm-2 text-center text-[18px] font-[600] text-[black]">
                     একটি শিশু জন্মের পর যে সকল প্রয়োজনীয় জিনিসগুলো দরকার হয়ে থাকে সেই </br>সকল আইটেমগুলো নিয়েই বানানো
                     হয়েছে আমাদের এই মোস্ট ওয়ান্টেড নিউবর্ন  </br>
                     কেয়ার বান্ডেল । সবকিছু একটি কম্বো কেয়ার বান্ডলে একসাথে পেয়ে যাচ্ছেন- </br>
@@ -27,14 +50,14 @@
                 <img class="h-full w-full" src="/storage/product/super-kid.png" alt="">
             </div>
             <div class="mt-[20px]">
-                <p class="text-center text-[18px] font-[600] text-[black]">
+                <p class="sm-3 text-center text-[18px] font-[600] text-[black]">
                     নবজাতক বাবা-মায়ের জন্য এটি বেস্ট কম্বো প্যাকেজ কারণ এই সবগুলো জিনিস </br>বেবির জন্মের সময় থেকেই অবশ্যই
                     লাগবে।
                 </p>
             </div>
             <div class="mt-[30px] flex justify-center">
-                <button
-                    class="boroder-[#0000] rounded-[5px] border-[2px] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">এখানে
+                <button id="order"
+                    class="border-[#000080] rounded-[5px] border-[2px] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">এখানে
                     অর্ডার করুন
                 </button>
             </div>
@@ -43,14 +66,14 @@
         {{-- ------------why-buy-section---- --}}
         <section>
             <div>
-                <h2 class="mt-[20px] text-center text-[30px] font-[600] text-[#D92044] underline">আমাদের থেকে কেন কিনবেন ?
+                <h2 class="sm-1 mt-[20px] text-center text-[30px] font-[600] text-[#D92044] underline">আমাদের থেকে কেন কিনবেন ?
                 </h2>
             </div>
-            <div class="mt-6 grid grid-cols-2">
-                <div class="h-[500px] border-[1px] border-[black] p-2">
+            <div class="mt-6 grid grid-cols-2 max-md:grid-cols-1">
+                <div class="product h-[500px] border-[1px] border-[black] p-2">
                     <img class="container h-full" src="/storage/product/baby-clothes.png" alt="">
                 </div>
-                <div class="border-b-[1px] border-r-[1px] border-t-[1px] border-[black] p-2">
+                <div class="border-[1px] border-[black] p-2">
                     <p class="mb-[2px] text-[18px] font-[500] text-[black]">
                         ১.আমরা প্রায় দীর্ঘ দুই বছর নবজাতকের পণ্য নিয়ে কাজ করছি এবং খুবই আস্থার সাথে প্রায়  ৫০০০
                         বাবা-মাকে গুণগত পণ্য দিয়ে সহায়তা করতে পেরেছি।
@@ -72,9 +95,9 @@
                     </p>
                 </div>
             </div>
-            <div class="mt-[30px] flex justify-center">
+            <div class="order mt-[30px] flex justify-center">
                 <button
-                    class="boroder-[#0000] rounded-[5px] border-[2px] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">এখানে
+                    class="border-[#000080] rounded-[5px] border-[2px] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">এখানে
                     অর্ডার করুন
                 </button>
             </div>
@@ -83,7 +106,7 @@
         {{-- --offer-section--- --}}
         <section>
             <div>
-                <h2 class="mt-[20px] text-center text-[30px] font-[600] text-[#D92044] underline">আমাদের থেকে কেন কিনবেন ?
+                <h2 class="sm-1 mt-[20px] text-center text-[30px] font-[600] text-[#D92044] underline">আমাদের থেকে কেন কিনবেন ?
                 </h2>
             </div>
             <div class="mt-[10px] flex flex-col">
@@ -218,17 +241,17 @@
 
         {{-- ---price--section---- --}}
         <section>
-            <div class="mx-[80px] mt-[20px] rounded-[5px] border-[1px] border-[black] py-[40px]">
-                <P class="text-center text-[25px] text-[#100D71]">
+            <div class="mx-[80px] max-sm:mx-[2px] mt-[20px] rounded-[5px] border-[1px] border-[black] py-[40px]">
+                <P class="sm-1 text-center text-[25px] text-[#100D71]">
                     অফার প্রাইস ১৫৫০/- টাকা
                 </P>
-                <P class="text-center text-[25px] text-[#CD7168]">
+                <P class="sm-1 text-center text-[25px] text-[#CD7168]">
                     সাথে সারা বাংলাদেশ ডেলিভারি চার্জ ফ্রি
                 </P>
             </div>
             <div class="my-[20px] mt-[30px] flex justify-center">
                 <button
-                    class="boroder-[#0000] rounded-[5px] border-[2px] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">
+                    class="border-[#000080] rounded-[5px] border-[2px] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">
                     এখানে অর্ডার করুন
                 </button>
             </div>
@@ -237,15 +260,15 @@
 
         <section>
             <div>
-                <h2 class="mt-[20px] text-center text-[30px] font-[600] text-[#D92044] underline">
+                <h2 class="sm-1 mt-[20px] text-center text-[30px] font-[600] text-[#D92044] underline">
                     আমাদের প্রোডাক্ট গুলোর বৈশিষ্ট্য
                 </h2>
             </div>
-            <div class="mt-6 grid grid-cols-2">
-                <div class="h-[600px] border-[1px] border-[black] p-2">
+            <div class="mt-6 grid grid-cols-2 max-md:grid-cols-1">
+                <div class="product h-[600px] border-[1px] border-[black] p-2">
                     <img class="container h-full" src="/storage/product/baby-clothes2.png" alt="">
                 </div>
-                <div class="border-b-[1px] border-r-[1px] border-t-[1px] border-[black] p-2">
+                <div class="border-[1px] border-[black] p-2">
                     <p class="mb-[2px] text-[18px] font-[500] text-[black]">
                         #এই বান্ডেল অফার এ প্রথমেই থাকছে ৪ পিস্ ভিন্ন ভিন্ন কালারের ডাবল লেয়ার নকশি কাঁথা ।১০০% সুতি
                         কাপড়ের তৈরি সম্পূর্ণভাবে হাতে সেলাই করা এবং সাইট এর বর্ডার গুলো লেস লাগানো যা কিনা কাথাগুলোকে করেছে
@@ -273,7 +296,7 @@
             </div>
             <div class="mt-[30px] flex justify-center">
                 <button
-                    class="boroder-[#0000] rounded-[5px] border-[2px] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">এখানে
+                    class="border-[#000080] rounded-[5px] border-[2px] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">এখানে
                     অর্ডার করুন
                 </button>
             </div>
@@ -282,7 +305,7 @@
         {{-- ---customer--review-section--- --}}
         <section>
             <div>
-                <h2 class="mb-[20px] mt-[50px] text-center text-[25px] font-[600] text-[#D92044] underline">
+                <h2 class="sm-1 mb-[20px] mt-[50px] text-center text-[25px] font-[600] text-[#D92044] underline">
                     যারা আমাদের থেকে নিয়েছেন তাদের মন্তব্য
                 </h2>
             </div>
@@ -295,7 +318,7 @@
             </div>
             <div class="mt-[30px] flex justify-center">
                 <button
-                    class="boroder-[#0000] rounded-[5px] border-[2px] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">এখানে
+                    class="border-[#000080] rounded-[5px] border-[2px] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">এখানে
                     অর্ডার করুন
                 </button>
             </div>
@@ -305,12 +328,12 @@
         {{-- -----footer-section---------- --}}
         <section class="mb-[100px]">
             <div>
-                <h2 class="mb-[20px] mt-[100px] text-center text-[25px] font-[600] text-[black]">
+                <h2 class="sm-1 mb-[20px] mt-[100px] max-sm:mt-[50px] text-center text-[25px] font-[600] text-[black]">
                     কিভাবে অর্ডার করবো?
                 </h2>
             </div>
             <div>
-                <p class="mb-[20px] mt-[30px] text-[18px] font-[600] tracking-[2px] text-[black]">
+                <p class="sm-2 mb-[20px] mt-[30px] text-[18px] font-[600] tracking-[2px] text-[black]">
                     আমরা আমাদের এই কম্বো প্যাকেজটিকে তিনটি ক্যাটাগরিতে বিভক্ত করেছি ।যারা ইয়োলো কালার ক্যাপ টাওয়ালে, সরিষা
                     বালিশ এবং ইউরিন মেট সহ প্যাকেজটিতে হলুদ কালারের কম্বিনেশনে চাচ্ছেন তারা ভাইভ এই অপশনটি সিলেক্ট করুন
                     । যারা পিংক কালার কম্বিনেশনে কম্বো প্যাকেজটি চাচ্ছেন তারা পিংক ভাইভ এই অপশনটি সিলেক্ট করুন । যারা আকাশী
@@ -320,23 +343,23 @@
                 </p>
             </div>
             <div class="">
-                <h2 class="text-[30px] text-[#ff4500]">CHOOSE PRODUCT CATEGORY</h2>
-                <div class="mt-[20px] pl-[40px]">
+                <h2 class="sm-1 text-[30px] text-[#ff4500]">CHOOSE PRODUCT CATEGORY</h2>
+                <div class="mt-[20px] pl-[40px] max-sm:pl-[0px]">
                     <div class="flex gap-2">
                         <input type="checkbox" class="h-[20px] w-[20px]" />
-                        <label class="mt-[-8px] text-[20px] font-[700]">
+                        <label class="sm-1 mt-[-8px] text-[20px] font-[700]">
                             NEW BORN CARE BUNDLE (15 IN 1) X 1 <br />YELLOW VIVE
                         </label>
                     </div>
                     <div class="mt-[15px] flex gap-2">
                         <input type="checkbox" class="h-[20px] w-[20px]" />
-                        <label class="mt-[-8px] text-[20px] font-[700]">
+                        <label class="sm-1 mt-[-8px] text-[20px] font-[700]">
                             NEW BORN CARE BUNDLE (15 IN 1) X 1 <br />BLUE VIVE
                         </label>
                     </div>
                     <div class="mt-[15px] flex gap-2">
                         <input type="checkbox" class="h-[20px] w-[20px]" />
-                        <label class="mt-[-8px] text-[20px] font-[700]">
+                        <label class="sm-1 mt-[-8px] text-[20px] font-[700]">
                             NEW BORN CARE BUNDLE (15 IN 1) X 1 <br />PINK VIVE
                         </label>
                     </div>
@@ -344,39 +367,42 @@
             </div>
             <div class="mt-[50px]">
                 <div>
-                    <h2 class="text-[30px] text-[#ff4500]">BILLING DETAILS </h2>
+                    <h2 class="sm-1 text-[30px] text-[#ff4500]">BILLING DETAILS </h2>
                 </div>
-                <div class="pl-[40px] mt-[20px]">
+                <div class="mt-[20px] pl-[40px] max-sm:pl-[0px]">
                     <div>
-                        <label class="mt-[-8px] text-[20px] font-[700]">
+                        <label class="sm-1 mt-[-8px] text-[20px] font-[700]">
                             আপনার নাম লিখুন
-                        </label><br/>
-                        <input type="text" class="border-[1px] border-[black] w-full my-[10px] py-[10px] rounded-[5px]" />
+                        </label><br />
+                        <input type="text"
+                            class="my-[10px] w-full rounded-[5px] border-[1px] border-[black] py-[10px]" />
                     </div>
                     <div>
-                        <label class="mt-[-8px] text-[20px] font-[700]">
+                        <label class="sm mt-[-8px] text-[20px] font-[700]">
                             আপনার ঠিকানা লিখুন
-                        </label><br/>
-                        <input type="text" class="border-[1px] border-[black] w-full my-[10px] py-[10px] rounded-[5px]" />
+                        </label><br />
+                        <input type="text"
+                            class="my-[10px] w-full rounded-[5px] border-[1px] border-[black] py-[10px]" />
                     </div>
                     <div>
-                        <label class="mt-[-8px] text-[20px] font-[700]">
+                        <label class="sm-1 mt-[-8px] text-[20px] font-[700]">
                             মোবাইল নাম্বার
-                        </label><br/>
-                        <input type="text" class="border-[1px] border-[black] w-full my-[10px] py-[10px] rounded-[5px]" />
+                        </label><br />
+                        <input type="text"
+                            class="my-[10px] w-full rounded-[5px] border-[1px] border-[black] py-[10px]" />
                     </div>
                 </div>
 
                 <div>
-                    <p class="mt-[20px] text-[20px] font-[700]">
+                    <p class="sm-1 mt-[20px] text-[20px] font-[700]">
                         ছেলে নাকি মেয়ে চিহ্নিত করুন (optional)
                     </p>
                     <div class="mt-[20px] pl-[40px]">
-                        <label class="mt-[-8px] text-[20px] font-[700] my-[10px]">
-                            <input type="radio" name="gender" class="w-[20px] h-[20px] mr-2" />ছেলে
+                        <label class="sm-1 my-[10px] mt-[-8px] text-[20px] font-[700]">
+                            <input type="radio" name="gender" class="mr-2 h-[20px] w-[20px]" />ছেলে
                         </label> <br />
-                        <label class="mt-[-8px] text-[20px] font-[700]">
-                            <input type="radio" name="gender" class="w-[20px] h-[20px] mr-2" />মেয়ে
+                        <label class="sm-1 mt-[-8px] text-[20px] font-[700]">
+                            <input type="radio" name="gender" class="mr-2 h-[20px] w-[20px]" />মেয়ে
                         </label>
                     </div>
 
